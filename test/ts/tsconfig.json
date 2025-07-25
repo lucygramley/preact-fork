@@ -8,9 +8,8 @@
     "typeRoots": ["../../", "../../node_modules"],
     "types": ["vitest/globals"],
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "jsxFactory": "createElement",
-    "jsxFragmentFactory": "Fragment",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "skipLibCheck": true,
     "paths": {
       "preact": ["../../"],

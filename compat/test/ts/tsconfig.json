@@ -6,7 +6,8 @@
     "lib": ["es6", "dom"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact/compat",
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
