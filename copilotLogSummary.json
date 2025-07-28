@@ -1,0 +1,223 @@
+{
+  "packages_updated": {
+    "total_count": 18,
+    "successful_upgrades": 18,
+    "partial_upgrades": 0,
+    "failed_upgrades": 0,
+    "packages": [
+      {
+        "name": "@actions/github",
+        "from": "^6.0.0",
+        "to": "^6.0.1",
+        "duration": "00:00:09",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@babel/core",
+        "from": "^7.26.0",
+        "to": "^7.28.0",
+        "duration": "00:00:11",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@babel/plugin-transform-react-jsx",
+        "from": "^7.25.9",
+        "to": "^7.27.1",
+        "duration": "00:00:11",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@babel/plugin-transform-react-jsx-source",
+        "from": "^7.25.9",
+        "to": "^7.27.1",
+        "duration": "00:00:11",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@babel/preset-env",
+        "from": "^7.26.0",
+        "to": "^7.28.0",
+        "duration": "00:00:11",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@babel/register",
+        "from": "^7.25.9",
+        "to": "^7.27.1",
+        "duration": "00:00:11",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@biomejs/biome",
+        "from": "^1.9.4",
+        "to": "^2.1.2",
+        "duration": "00:00:08",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@types/node",
+        "from": "^18.19.87",
+        "to": "^24.1.0",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "@vitest/browser",
+        "from": "^3.2.1",
+        "to": "^3.2.4",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "playwright",
+        "from": "^1.53.1",
+        "to": "^1.54.1",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "terser",
+        "from": "5.16.0",
+        "to": "5.43.1",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "vite",
+        "from": "^6.2.0",
+        "to": "^7.0.6",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "vitest",
+        "from": "^3.2.1",
+        "to": "^3.2.4",
+        "duration": "00:00:14",
+        "errors_introduced": 0
+      },
+      {
+        "name": "esbuild",
+        "from": "^0.24.0",
+        "to": "^0.25.8",
+        "duration": "00:00:08",
+        "errors_introduced": 0
+      },
+      {
+        "name": "npm-run-all2",
+        "from": "^7.0.0",
+        "to": "^8.0.4",
+        "duration": "00:00:08",
+        "errors_introduced": 0
+      },
+      {
+        "name": "preact-render-to-string",
+        "from": "^6.5.0",
+        "to": "^6.5.13",
+        "duration": "00:00:08",
+        "errors_introduced": 0
+      },
+      {
+        "name": "typescript",
+        "from": "5.1.6",
+        "to": "5.8.3",
+        "duration": "00:10:21",
+        "errors_introduced": 22
+      },
+      {
+        "name": "undici",
+        "from": "^4.12.0",
+        "to": "^7.12.0",
+        "duration": "00:00:42",
+        "errors_introduced": 0
+      }
+    ]
+  },
+  "api_calls": {
+    "total_calls": 80,
+    "total_tokens": 1574838,
+    "prompt_tokens": 1557041,
+    "completion_tokens": 17797,
+    "model_used": "claude-sonnet-4",
+    "ai_processing_time": {
+      "longest_response": "210913ms",
+      "average_response": "~19685ms"
+    }
+  },
+  "errors_found_and_resolved": {
+    "initial_baseline_errors": 28,
+    "typescript_upgrade_errors": 22,
+    "final_errors_resolved": 22,
+    "error_types": [
+      {
+        "error_code": "TS2874",
+        "description": "JSX tag requires 'h' to be in scope",
+        "affected_files": [
+          "people/index.tsx",
+          "people/profile.tsx",
+          "demo/people/index.tsx",
+          "demo/people/profile.tsx"
+        ],
+        "resolution_method": "Added 'h' import from preact to JSX files"
+      }
+    ],
+    "configuration_changes": [
+      {
+        "file": "test/ts/tsconfig.json",
+        "changes": [
+          "Changed jsx from 'react' to 'react-jsx'",
+          "Added jsxImportSource: 'preact'",
+          "Removed jsxFactory and jsxFragmentFactory settings"
+        ]
+      },
+      {
+        "file": "compat/test/ts/tsconfig.json",
+        "changes": [
+          "Changed jsx from 'react' to 'react-jsx'",
+          "Added jsxImportSource: 'preact/compat'"
+        ]
+      }
+    ],
+    "code_fixes": [
+      {
+        "pattern": "import { Component } from 'preact';",
+        "replacement": "import { Component, h } from 'preact';",
+        "files_affected": [
+          "demo/people/index.tsx",
+          "demo/people/profile.tsx"
+        ]
+      }
+    ]
+  },
+  "ai_usage_for_error_resolution": {
+    "model": "claude-sonnet-4",
+    "total_ai_calls_for_errors": 80,
+    "knowledge_base_queries": 5,
+    "known_solutions_attempted": 5,
+    "ai_developed_solutions": 2,
+    "successful_pattern_matches": 1,
+    "error_fix_ingestion": 2,
+    "tools_used": [
+      "OpenFile",
+      "SearchFileForOccurrences",
+      "OpenFileLines",
+      "ApplyRegexSolutions",
+      "ApplyPatch"
+    ]
+  },
+  "overall_summary": {
+    "execution_time": "00:14:22",
+    "success_rate": "100%",
+    "project_type": "Preact/TypeScript project",
+    "major_breaking_change": "TypeScript 5.8.3 introduced stricter JSX handling requiring explicit 'h' function imports",
+    "resolution_strategy": "The AI successfully identified that TypeScript 5.8.3 changed JSX compilation behavior, requiring explicit imports of the JSX pragma function ('h') in Preact projects. It applied both configuration changes to tsconfig files and code modifications to import statements.",
+    "files_modified": [
+      "package.json",
+      "package-lock.json",
+      "test/ts/tsconfig.json",
+      "compat/test/ts/tsconfig.json",
+      "demo/people/index.tsx",
+      "demo/people/profile.tsx"
+    ],
+    "key_achievement": "All 22 TypeScript compilation errors were successfully resolved through intelligent analysis and systematic application of fixes, demonstrating effective AI-driven package upgrade and error resolution."
+  }
